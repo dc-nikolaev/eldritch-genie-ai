@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e  # Завершать выполнение при ошибке любой команды
+
+# Путь к каталогу .git
+GIT_DIR="$(git rev-parse --git-dir)"
+
+if [ -d "$GIT_DIR/rebase-merge" ] || [ -d "$GIT_DIR/rebase-apply" ]; then
+  echo "Rebase in progress, skip pre-commit hook"
+  exit 0
+fi
+
+if [ -f "$GIT_DIR/MERGE_HEAD" ]; then
+  echo "Merge in progress, skip pre-commit hook"
+  exit 0
+fi
+
+echo "Running deno fmt..."
+deno fmt
+
+echo "Running deno lint..."
+deno lint
+
+exit 0 

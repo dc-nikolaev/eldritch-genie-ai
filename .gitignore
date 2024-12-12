@@ -1,0 +1,12 @@
+# JetBrains
+.idea
+*.iml
+
+# VSCode
+.vscode
+
+# dotenv environment variable files
+.env
+
+# npm dependencies
+node_modules/

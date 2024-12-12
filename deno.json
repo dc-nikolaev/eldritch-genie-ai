@@ -1,0 +1,28 @@
+{
+    "tasks": {
+        "dev": "export KAIBAN_TELEMETRY_OPT_OUT=true && deno run --allow-read --allow-env --allow-net --allow-write main.ts",
+        "setup-hooks": "deno run --allow-read --allow-run --allow-write .gitHooks/set-hooks-path.ts"
+    },
+    "imports": {
+        "@openai/openai": "jsr:@openai/openai@^4.71.1",
+        "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
+        "kaibanjs": "npm:kaibanjs@^0.10.0",
+        "openai": "npm:openai@^4.73.1"
+    },
+    "fmt": {
+        "lineWidth": 120,
+        "indentWidth": 4,
+        "semiColons": true,
+        "singleQuote": true,
+        "proseWrap": "never",
+        "useTabs": false
+    },
+    "lint": {
+        "include": ["src/"],
+        "exclude": ["node_modules/"],
+        "rules": {
+            "tags": ["recommended"],
+            "include": ["ban-untagged-todo", "no-unused-vars", "no-explicit-any"]
+        }
+    }
+}
