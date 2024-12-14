@@ -10,3 +10,5 @@
 
 # npm dependencies
 node_modules/
+
+cli_demo.log

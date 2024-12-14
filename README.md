@@ -22,6 +22,7 @@ This is an experiment in working with AI agents. The main idea is to create a sy
 - **KaibanJS**
 - **OpenAI GPT-4**
 - **TypeScript**
+- **Grammy**
 
 ## 🚀 Getting Started
 
@@ -29,12 +30,13 @@ This is an experiment in working with AI agents. The main idea is to create a sy
 
 - Deno v2.x installed
 - OpenAI API key
+- Telegram Bot Token (for bot interface)
 
 ### Installation and Running
 
 1. Clone the repository
 2. Create `.env` file based on `.env.example` and add your OpenAI API key
-3. Run `deno task dev`
+3. Run `deno task dev:cli_demo` or `deno task dev:bot`
 
 ## 📝 License
 

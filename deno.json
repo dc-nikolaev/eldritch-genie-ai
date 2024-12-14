@@ -1,13 +1,14 @@
 {
     "tasks": {
-        "dev": "export KAIBAN_TELEMETRY_OPT_OUT=true && deno run --allow-read --allow-env --allow-net --allow-write main.ts",
+        "dev:cli_demo": "export KAIBAN_TELEMETRY_OPT_OUT=true && deno run --allow-read --allow-env --allow-net --allow-write cli_demo.ts",
+        "dev:bot": "deno run --allow-net --allow-read --allow-env --allow-import bot.ts",
         "setup-hooks": "deno run --allow-read --allow-run --allow-write .gitHooks/set-hooks-path.ts"
     },
     "imports": {
-        "@openai/openai": "jsr:@openai/openai@^4.71.1",
-        "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
-        "kaibanjs": "npm:kaibanjs@^0.10.0",
-        "openai": "npm:openai@^4.73.1"
+        "@openai/openai": "jsr:@openai/openai@4.71.1",
+        "@std/dotenv": "jsr:@std/dotenv@0.225.2",
+        "kaibanjs": "npm:kaibanjs@0.10.0",
+        "openai": "npm:openai@4.73.1"
     },
     "fmt": {
         "lineWidth": 120,
