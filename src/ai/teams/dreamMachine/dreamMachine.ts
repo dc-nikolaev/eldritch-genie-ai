@@ -1,6 +1,6 @@
 import { createOpenAPITeam } from '../lib/mod.ts';
 import { Director, Malefactor, Speaker } from './agents/mod.ts';
-import { chooseBestDistortionTask, distortWishTask, generateDramaticSpeechTask } from './tasks/mod.ts';
+import { chooseBestDistortionTask, distortWishTask, generateThirdPersonSpeechTask } from './tasks/mod.ts';
 import { createRetributionCore, DivineJudgement, DivineRetributionException } from './chambers/retributionCore/mod.ts';
 
 export interface DjinnPersonality {
@@ -8,7 +8,10 @@ export interface DjinnPersonality {
     description: string;
 }
 
-export function createDreamMachine(playerWish: string, djinnPersonality: DjinnPersonality) {
+export function createDreamMachine(
+    playerWish: string,
+    djinnPersonality: DjinnPersonality,
+) {
     return {
         async start() {
             // Сначала проверяем желание через RetributionCore
@@ -31,7 +34,11 @@ export function createDreamMachine(playerWish: string, djinnPersonality: DjinnPe
             return createOpenAPITeam({
                 name: 'Dream Machine',
                 agents: [Malefactor, Director, Speaker],
-                tasks: [distortWishTask, chooseBestDistortionTask, generateDramaticSpeechTask],
+                tasks: [
+                    distortWishTask,
+                    chooseBestDistortionTask,
+                    generateThirdPersonSpeechTask,
+                ],
                 inputs: {
                     playerWish,
                     djinnPersonalityType: djinnPersonality.type,

@@ -19,7 +19,6 @@ export const Speaker: Agent = new Agent({
         model: 'gpt-4o',
         maxRetries: 2,
         temperature: 0.7,
-        max_tokens: 120,
     } as (typeof Speaker)['llmConfig'],
     maxIterations: 3,
     forceFinalAnswer: true,

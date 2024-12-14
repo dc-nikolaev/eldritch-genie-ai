@@ -2,6 +2,7 @@
     "tasks": {
         "dev:cli_demo": "export KAIBAN_TELEMETRY_OPT_OUT=true && deno run --allow-read --allow-env --allow-net --allow-write cli_demo.ts",
         "dev:bot": "deno run --allow-net --allow-read --allow-env --allow-import bot.ts",
+        "dev:audio": "deno run --allow-read --allow-env --allow-net --allow-write cli_audio_demo.ts",
         "setup-hooks": "deno run --allow-read --allow-run --allow-write .gitHooks/set-hooks-path.ts"
     },
     "imports": {
